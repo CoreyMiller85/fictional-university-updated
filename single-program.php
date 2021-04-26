@@ -4,17 +4,10 @@ get_header();
 
 while (have_posts()) {
   the_post();
+  pageBanner();
 ?>
 
-  <div class="page-banner">
-    <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/ocean.jpg') ?>);"></div>
-    <div class="page-banner__content container container--narrow">
-      <h1 class="page-banner__title"><?php the_title() ?></h1>
-      <div class="page-banner__intro">
-        <p>DONT FORGET TO REPLACE ME LATER</p>
-      </div>
-    </div>
-  </div>
+
 
   <div class="container container--narrow page-section">
     <div class="metabox metabox--position-up metabox--with-home-link">
@@ -47,7 +40,7 @@ while (have_posts()) {
       while ($relatedProfessors->have_posts()) {
         $relatedProfessors->the_post(); ?>
         <li class="professor-card__list-item"><a class="professor-card" href="<?php the_permalink() ?>">
-            <img src="<?php the_post_thumbnail_url() ?>" alt="" class="professor-card__image">
+            <img src="<?php the_post_thumbnail_url('professorLandscape') ?>" alt="" class="professor-card__image">
             <span class="professor-card__name"><?php the_title() ?></span>
           </a>
         </li>
